@@ -1,0 +1,47 @@
+# ============================================================
+# MENU — edit this file and upload to update the website menu.
+# 菜单 — 修改本文件并上传到 GitHub,网站菜单即自动更新。
+#
+# FORMAT 格式:
+#   [Section Name]                       <- becomes a menu tab
+#   [分类名]                              <- 每个分类自动变成一个菜单标签页
+#   Dish Name | Price | Description | Tags
+#   菜名 | 价格 | 描述 | 标签
+#
+# - Price, Description, Tags are optional (but keep the | order).
+#   价格、描述、标签都可省略(但 | 分隔顺序不能乱)。
+# - Tags (comma separated): vegetarian, vegan, gf, spicy, new,
+#   popular, chef's pick, special
+#   标签(逗号分隔,显示为徽章):vegetarian 素食 / vegan 纯素 /
+#   gf 无麸质 / spicy 辣 / new 新品 / popular 人气 /
+#   chef's pick 主厨推荐 / special 特别款
+# - Lines starting with # are ignored.  以 # 开头的行是注释。
+# - 可任意增删 [分类] 和菜品行,数量不限。
+# ============================================================
+
+[Starters]
+Hand-Dived Scallops | 24 | Cauliflower purée, brown butter, fried capers, lemon | chef's pick
+Burrata & Heirloom Tomato | 19 | Basil oil, aged balsamic, grilled sourdough | vegetarian
+French Onion Soup | 16 | Caramelized onions, gruyère crouton, thyme
+Steak Tartare | 22 | Hand-cut beef, smoked egg yolk, pommes gaufrettes
+Roasted Beet Salad | 17 | Whipped goat cheese, candied walnuts, citrus | vegetarian, gf
+
+[Mains]
+Dry-Aged Ribeye | 58 | 45-day aged, bone marrow butter, pommes purée | popular
+Wild Halibut | 42 | Saffron beurre blanc, fennel, spring vegetables | gf
+Duck à l'Orange | 44 | Five-spice glaze, confit leg, charred endive
+Wild Mushroom Risotto | 32 | Carnaroli rice, black truffle, parmesan crisp | vegetarian
+Rack of Lamb | 52 | Herb crust, ratatouille, rosemary jus | new
+Harissa Cauliflower Steak | 28 | Chickpea purée, pomegranate, mint | vegan, spicy
+
+[Desserts]
+Crème Brûlée | 14 | Tahitian vanilla, caramelized sugar | popular
+Chocolate Fondant | 15 | Valrhona chocolate, salted caramel ice cream
+Lemon Tart | 13 | Torched meringue, crème fraîche | vegetarian
+Seasonal Sorbet | 11 | Ask your server for today's selection | vegan, gf
+
+[Drinks]
+Sommelier's Wine Pairing | 65 | Five pours selected for your menu | special
+Maison Old Fashioned | 18 | Barrel-aged bourbon, demerara, orange bitters
+Lumière Spritz | 16 | Elderflower, prosecco, fresh citrus | popular
+Artisan Coffee | 6 | Locally roasted, French press

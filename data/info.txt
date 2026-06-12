@@ -1,0 +1,55 @@
+# ============================================================
+# RESTAURANT INFO — edit values after each colon, then upload.
+# 餐厅基本信息 — 修改每个冒号后面的值,然后上传到 GitHub 即生效。
+#
+# Lines starting with # are ignored.  以 # 开头的行是注释,会被忽略。
+# Keys "about", "hours", "social" may repeat (one per line).
+# about(简介)、hours(营业时间)、social(社交链接)可以写多行。
+# ============================================================
+
+# 餐厅名称(显示在导航栏、首屏标题、页脚)
+name: Maison Lumière
+# 标语/一句话介绍
+tagline: Modern European fine dining in the heart of the city
+# 创立年份
+established: 2012
+# 主厨姓名(显示在「关于我们」签名处)
+chef: Claire Beaumont
+
+# 电话(会自动生成可点击拨打的链接)
+phone: (415) 555-0123
+# 邮箱
+email: reservations@maisonlumiere.com
+# 地址
+address: 1847 Lafayette Street, San Francisco, CA 94109
+
+# Optional: custom Google Maps link. If removed, an address search link is used.
+# 可选:自定义谷歌地图链接;删除此行则自动用地址生成搜索链接。
+map_link: https://www.google.com/maps/search/1847+Lafayette+Street+San+Francisco
+
+# Reservation button: use a booking URL (OpenTable, Resy...) or remove to use phone.
+# 预订按钮:填订座网址(OpenTable、Resy 等);删除此行则按钮改为拨打电话。
+reservation_link: https://www.opentable.com
+# 预订区的提示文字
+reservation_note: Reservations recommended. Walk-ins welcome at the bar.
+
+# Shown under the menu.  显示在菜单下方的备注(如过敏提示)。
+menu_note: Menu changes seasonally. Please inform your server of any allergies or dietary restrictions.
+
+# About section — each "about:" line becomes one paragraph.
+# 「关于我们」— 每行 about: 是一个段落,可增删行数。
+about: Maison Lumière was born from a simple idea: that an evening at the table should feel like a celebration. Since 2012, we have welcomed guests into our candle-lit dining room for seasonal European cuisine built on the finest local ingredients.
+about: Executive Chef Claire Beaumont trained in Lyon and Copenhagen before returning home to open Maison Lumière. Her menus change with the markets — what you taste tonight may never appear quite the same way again.
+about: Whether you join us for a quiet dinner for two or a celebration with friends, our team is devoted to one thing: making your evening extraordinary.
+
+# Hours — "Days | Times". One line each. "Closed" is fine too.
+# 营业时间 — 格式「星期 | 时间」,每行一条;写 Closed 表示休息;今天会自动高亮。
+hours: Monday | Closed
+hours: Tuesday – Thursday | 5:00 PM – 10:00 PM
+hours: Friday – Saturday | 5:00 PM – 11:00 PM
+hours: Sunday | 4:00 PM – 9:00 PM
+
+# Social links — "Label | URL". One line each.
+# 社交链接 — 格式「名称 | 网址」,每行一条,显示在页脚。
+social: Instagram | https://instagram.com
+social: Facebook | https://facebook.com

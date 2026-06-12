@@ -1,0 +1,29 @@
+# ============================================================
+# ANNOUNCEMENTS — edit this file and upload to update the site.
+# 公告 — 修改本文件并上传到 GitHub,网站公告区即自动更新。
+#
+# FORMAT 格式(每条公告之间用单独一行 --- 分隔):
+#   [YYYY-MM-DD] Title
+#   [年-月-日] 标题
+#   Body text. Leave a blank line to start a new paragraph.
+#   正文内容。空一行表示分段。
+#
+# - Add "| pinned" after the title to keep it at the front.
+#   标题后加 "| pinned" 可将该条置顶(始终排第一)。
+# - Newest dates show first automatically.
+#   其余公告自动按日期从新到旧排列。
+# - Delete a block (including its ---) to remove an announcement.
+#   删除整段(连同它的 ---)即可下架一条公告。
+# - Lines starting with # are ignored.  以 # 开头的行是注释。
+# ============================================================
+
+[2026-06-10] Summer Tasting Menu Launches June 20 | pinned
+Chef Beaumont unveils a seven-course summer tasting menu celebrating the season's best — heirloom tomatoes, line-caught fish, and stone fruit from our valley partners.
+
+Available Tuesday through Saturday. Wine pairing optional. Reserve early — seats are limited.
+---
+[2026-06-01] Now Open Sundays
+By popular demand, we now welcome guests on Sunday evenings from 4 PM. Join us for a relaxed end to the weekend with our full menu and bar.
+---
+[2026-05-18] Private Dining Room Available
+Our newly renovated private dining room seats up to 16 guests — perfect for anniversaries, business dinners, and family celebrations. Email us for availability and custom menus.

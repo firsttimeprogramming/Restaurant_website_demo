@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant</title>
+<meta name="description" content="Modern fine dining restaurant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<!-- ======================= 导航栏 NAVIGATION ======================= -->
+<!-- 顶部固定导航,手机端自动变为汉堡菜单;餐厅名称由 data/info.txt 的 name 自动填充 -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <svg viewBox="0 0 40 40" class="logo-mark" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M13 12 v9 a3.5 3.5 0 0 0 7 0 v-9 M16.5 12 v9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M26 12 c-2.5 1.5 -2.5 7 0 8.5 V28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M13 28 h0 M16.5 24.5 V28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text" data-bind="name">Restaurant</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#announcements">News</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+      <a href="#visit" class="nav-cta">Reserve</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ======================= 首屏大图 HERO ======================= -->
+<!-- 全屏开场区:餐厅名、标语、按钮文字均从 data/info.txt 自动读取;背景为内嵌 SVG 插画 -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="heroGlow" cx="50%" cy="38%" r="75%">
+          <stop offset="0%" stop-color="#2b2118"/>
+          <stop offset="55%" stop-color="#191410"/>
+          <stop offset="100%" stop-color="#0e0b09"/>
+        </radialGradient>
+        <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#c9a227" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#e3c565"/>
+          <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#heroGlow)"/>
+      <!-- 精致餐盘插画 fine dining plate illustration -->
+      <g transform="translate(720 430)" opacity="0.85">
+        <ellipse cx="0" cy="0" rx="330" ry="118" fill="none" stroke="#c9a227" stroke-opacity="0.28" stroke-width="1.5"/>
+        <ellipse cx="0" cy="0" rx="265" ry="92" fill="none" stroke="#c9a227" stroke-opacity="0.45" stroke-width="1"/>
+        <ellipse cx="0" cy="0" rx="170" ry="58" fill="#1f1812" stroke="#e3c565" stroke-opacity="0.55" stroke-width="1.2"/>
+        <g stroke="#e3c565" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.9">
+          <path d="M-40 -8 q18 -26 52 -22 q26 4 30 24 q-34 14 -60 6 q-16 -4 -22 -8 Z" fill="#2b2118"/>
+          <path d="M-52 6 q30 16 84 6"/>
+          <path d="M-30 -34 q6 -10 16 -12 M0 -38 q8 -8 18 -8"/>
+        </g>
+      </g>
+      <!-- 刀叉装饰 cutlery flourishes -->
+      <g stroke="#c9a227" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.5">
+        <g transform="translate(310 430) rotate(-12)">
+          <path d="M0 -70 v140 M-7 -70 v34 a7 7 0 0 0 14 0 v-34 M-7 -36 M7 -70"/>
+        </g>
+        <g transform="translate(1130 430) rotate(12)">
+          <path d="M0 70 V-20 M0 -20 c-9 -6 -9 -38 0 -50 c9 12 9 44 0 50 Z"/>
+        </g>
+      </g>
+      <rect x="420" y="700" width="600" height="2" fill="url(#goldLine)"/>
+      <!-- 点缀星光 subtle stars / specks -->
+      <g fill="#e3c565" opacity="0.35">
+        <circle cx="200" cy="160" r="1.4"/><circle cx="1240" cy="120" r="1.2"/>
+        <circle cx="980" cy="210" r="1"/><circle cx="420" cy="100" r="1"/>
+        <circle cx="120" cy="620" r="1.2"/><circle cx="1340" cy="560" r="1.4"/>
+        <circle cx="760" cy="90" r="1.3"/><circle cx="560" cy="180" r="0.9"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <p class="hero-kicker">Est. <span data-bind="established">2020</span></p>
+    <h1 class="hero-title" data-bind="name">Restaurant Name</h1>
+    <div class="hero-divider" aria-hidden="true">
+      <span></span><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" fill="#c9a227"/></svg><span></span>
+    </div>
+    <p class="hero-tagline" data-bind="tagline">Fine dining, reimagined.</p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn btn-solid">Explore the Menu</a>
+      <a href="#visit" class="btn btn-ghost">Reserve a Table</a>
+    </div>
+  </div>
+  <a href="#announcements" class="hero-scroll" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+</section>
+
+<!-- ======================= 公告 ANNOUNCEMENTS ======================= -->
+<!-- 公告卡片由 data/announcements.txt 自动生成,无需修改此处 HTML -->
+<section class="section section-dark" id="announcements">
+  <div class="container">
+    <p class="section-kicker">What's New</p>
+    <h2 class="section-title">Announcements</h2>
+    <div class="section-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+    <div class="announce-grid" id="announceGrid">
+      <p class="loading-note">Loading announcements…</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 菜单 MENU ======================= -->
+<!-- 菜单标签页和菜品由 data/menu.txt 自动生成,改菜单只需改那个 txt 文件 -->
+<section class="section" id="menu">
+  <div class="container">
+    <p class="section-kicker">Crafted Daily</p>
+    <h2 class="section-title">Our Menu</h2>
+    <div class="section-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+    <div class="menu-tabs" id="menuTabs" role="tablist"></div>
+    <div class="menu-panels" id="menuPanels">
+      <p class="loading-note">Loading menu…</p>
+    </div>
+    <p class="menu-note" data-bind="menu_note"></p>
+  </div>
+</section>
+
+<!-- ======================= 关于我们 ABOUT ======================= -->
+<!-- 介绍文字来自 data/info.txt 的 about: 行(每行一段);左侧为厨师帽 SVG 装饰画 -->
+<section class="section section-dark" id="about">
+  <div class="container about-layout">
+    <div class="about-art" aria-hidden="true">
+      <svg viewBox="0 0 420 520">
+        <defs>
+          <linearGradient id="aboutBg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#241c14"/><stop offset="100%" stop-color="#15100c"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="10" width="400" height="500" rx="4" fill="url(#aboutBg)" stroke="#c9a227" stroke-opacity="0.35"/>
+        <rect x="26" y="26" width="368" height="468" rx="2" fill="none" stroke="#c9a227" stroke-opacity="0.2"/>
+        <!-- 厨师帽 chef hat -->
+        <g transform="translate(210 150)" stroke="#e3c565" fill="none" stroke-width="2" stroke-linecap="round">
+          <path d="M-52 30 v26 a4 4 0 0 0 4 4 h96 a4 4 0 0 0 4-4 v-26" />
+          <path d="M-52 30 c-26 -4 -34 -38 -10 -48 c-4 -26 30 -38 44 -20 c16 -22 52 -8 46 18 c24 6 20 44 -28 50 Z" fill="#1f1812"/>
+          <path d="M-26 36 v16 M0 36 v16 M26 36 v16" stroke-opacity="0.7"/>
+        </g>
+        <!-- 打蛋器和勺子 whisk + spoon -->
+        <g transform="translate(150 330)" stroke="#c9a227" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.8">
+          <path d="M0 -50 v100"/>
+          <path d="M-10 50 q10 28 20 0 q-10 22 -20 0" transform="rotate(180 0 50)"/>
+          <path d="M0 50 c-14 14 -14 36 0 50 c14 -14 14 -36 0 -50" transform="translate(0 -20) scale(0.8)"/>
+        </g>
+        <g transform="translate(270 330)" stroke="#c9a227" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.8">
+          <path d="M0 -50 v60"/>
+          <ellipse cx="0" cy="30" rx="14" ry="22" fill="#1f1812"/>
+        </g>
+        <text x="210" y="468" text-anchor="middle" fill="#e3c565" font-family="Cormorant Garamond, serif" font-size="22" letter-spacing="6" opacity="0.85">SINCE <tspan data-bind="established">2020</tspan></text>
+      </svg>
+    </div>
+    <div class="about-text">
+      <p class="section-kicker">Our Story</p>
+      <h2 class="section-title left">About Us</h2>
+      <div class="section-divider left" aria-hidden="true"><span></span><i></i><span></span></div>
+      <div id="aboutParagraphs"><p class="loading-note">Loading…</p></div>
+      <p class="about-signature" data-bind="chef"></p>
+      <p class="about-signature-role">Executive Chef</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 画廊 GALLERY ======================= -->
+<!-- 默认使用内嵌 SVG 插画;想换成真实照片,把任意 <svg>...</svg> 整块替换为
+     <img src="images/你的照片.jpg" alt="说明"> 并把照片上传到 images/ 文件夹 -->
+<section class="section" id="gallery">
+  <div class="container">
+    <p class="section-kicker">A Taste of the Experience</p>
+    <h2 class="section-title">Gallery</h2>
+    <div class="section-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+    <div class="gallery-grid">
+
+      <figure class="gallery-card">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Seared scallops illustration">
+          <rect width="400" height="300" fill="#20180f"/>
+          <ellipse cx="200" cy="170" rx="150" ry="62" fill="#2a2014" stroke="#c9a227" stroke-opacity="0.5"/>
+          <ellipse cx="200" cy="162" rx="110" ry="44" fill="#332618" stroke="#e3c565" stroke-opacity="0.35"/>
+          <g>
+            <circle cx="160" cy="155" r="22" fill="#e8c989"/><circle cx="160" cy="155" r="22" fill="none" stroke="#a8762e" stroke-width="3" stroke-dasharray="18 10"/>
+            <circle cx="215" cy="168" r="22" fill="#eed3a0"/><circle cx="215" cy="168" r="22" fill="none" stroke="#a8762e" stroke-width="3" stroke-dasharray="14 12"/>
+            <circle cx="255" cy="148" r="19" fill="#e8c989"/><circle cx="255" cy="148" r="19" fill="none" stroke="#a8762e" stroke-width="3" stroke-dasharray="16 9"/>
+          </g>
+          <path d="M130 140 q14 -18 34 -14 M240 185 q20 8 40 -2" stroke="#5d7a4a" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="140" cy="185" r="4" fill="#b8412f"/><circle cx="278" cy="172" r="4" fill="#b8412f"/>
+          <g fill="#e3c565" opacity="0.6"><circle cx="60" cy="60" r="1.5"/><circle cx="340" cy="50" r="1.5"/><circle cx="320" cy="250" r="1.5"/></g>
+        </svg>
+        <figcaption>Hand-Dived Scallops</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Wine pairing illustration">
+          <rect width="400" height="300" fill="#1c150e"/>
+          <g stroke="#e3c565" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M150 70 h60 c0 50 -12 66 -30 70 c-18 -4 -30 -20 -30 -70 Z" fill="#241a10"/>
+            <path d="M180 140 v70 M150 212 h60"/>
+            <path d="M156 84 h48 c-1 30 -9 44 -24 48 c-15 -4 -23 -18 -24 -48 Z" fill="#7c1f2b" stroke="none"/>
+          </g>
+          <g transform="translate(265 161)" stroke="#c9a227" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9">
+            <path d="M-8 -85 h16 v28 c0 8 14 14 14 30 v70 a8 8 0 0 1 -8 8 h-28 a8 8 0 0 1 -8 -8 v-70 c0 -16 14 -22 14 -30 Z" fill="#241a10"/>
+            <rect x="-9" y="-90" width="18" height="7" rx="2" fill="#c9a227" stroke="none"/>
+            <rect x="-15" y="-10" width="30" height="32" rx="2" fill="#7c1f2b" stroke="none" opacity="0.9"/>
+          </g>
+          <path d="M90 240 h220" stroke="#c9a227" stroke-opacity="0.4"/>
+          <g fill="#e3c565" opacity="0.5"><circle cx="80" cy="70" r="1.5"/><circle cx="330" cy="80" r="1.5"/><circle cx="100" cy="200" r="1.2"/></g>
+        </svg>
+        <figcaption>Curated Wine Pairings</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Dessert illustration">
+          <rect width="400" height="300" fill="#20180f"/>
+          <g transform="translate(200 175)">
+            <path d="M-70 30 h140 l-12 22 a10 10 0 0 1 -9 6 h-98 a10 10 0 0 1 -9 -6 Z" fill="#2a2014" stroke="#c9a227" stroke-opacity="0.5"/>
+            <path d="M-44 30 c0 -36 18 -58 44 -58 c26 0 44 22 44 58 Z" fill="#6b3a23"/>
+            <path d="M-44 30 c0 -36 18 -58 44 -58 c26 0 44 22 44 58" fill="none" stroke="#e3c565" stroke-opacity="0.4"/>
+            <path d="M-30 6 q8 -12 22 -12 M-36 18 q4 -8 10 -12" stroke="#eed3a0" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+            <circle cx="0" cy="-38" r="9" fill="#b8412f"/><path d="M0 -47 q4 -8 10 -10" stroke="#5d7a4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </g>
+          <g fill="#e3c565" opacity="0.5"><circle cx="70" cy="65" r="1.5"/><circle cx="330" cy="55" r="1.5"/><circle cx="310" cy="240" r="1.2"/></g>
+        </svg>
+        <figcaption>Artisan Desserts</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Dining room illustration">
+          <rect width="400" height="300" fill="#1c150e"/>
+          <g stroke="#c9a227" stroke-width="1.6" fill="none" opacity="0.85">
+            <path d="M60 250 h280" stroke-opacity="0.5"/>
+            <rect x="120" y="170" width="160" height="14" rx="3" fill="#241a10"/>
+            <path d="M135 184 l-8 66 M265 184 l8 66"/>
+            <path d="M200 170 v-22" stroke-opacity="0.7"/>
+            <circle cx="200" cy="138" r="11" fill="#e3c565" stroke="none" opacity="0.9"/>
+            <path d="M200 60 v50" stroke-opacity="0.7"/>
+            <path d="M186 112 h28 l-6 16 h-16 Z" fill="#241a10"/>
+            <ellipse cx="165" cy="166" rx="16" ry="5" fill="#2a2014"/>
+            <ellipse cx="235" cy="166" rx="16" ry="5" fill="#2a2014"/>
+            <path d="M310 250 v-90 a6 6 0 0 0 -12 0 M90 250 v-90 a6 6 0 0 1 12 0" stroke-opacity="0.6"/>
+          </g>
+          <g fill="#e3c565" opacity="0.5"><circle cx="80" cy="60" r="1.5"/><circle cx="320" cy="70" r="1.5"/><circle cx="350" cy="200" r="1.2"/></g>
+        </svg>
+        <figcaption>An Intimate Dining Room</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Fresh ingredients illustration">
+          <rect width="400" height="300" fill="#20180f"/>
+          <g transform="translate(200 160)">
+            <path d="M-110 40 q110 50 220 0 q-110 28 -220 0 Z" fill="#2a2014" stroke="#c9a227" stroke-opacity="0.5"/>
+            <g stroke="#5d7a4a" stroke-width="3" fill="none" stroke-linecap="round">
+              <path d="M-70 20 q-10 -34 14 -48 q6 26 -14 48 Z" fill="#3f5733"/>
+              <path d="M70 24 q24 -30 2 -52 q-20 24 -2 52 Z" fill="#3f5733"/>
+            </g>
+            <circle cx="-20" cy="6" r="20" fill="#b8412f"/><path d="M-20 -14 q6 -8 12 -10" stroke="#5d7a4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="26" cy="14" r="14" fill="#d98e2b"/>
+            <ellipse cx="0" cy="34" rx="10" ry="6" fill="#7c5a8f"/>
+            <ellipse cx="-46" cy="30" rx="9" ry="5" fill="#7c5a8f"/>
+          </g>
+          <g fill="#e3c565" opacity="0.5"><circle cx="70" cy="60" r="1.5"/><circle cx="335" cy="65" r="1.5"/></g>
+        </svg>
+        <figcaption>Market-Fresh Ingredients</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Craft cocktails illustration">
+          <rect width="400" height="300" fill="#1c150e"/>
+          <g stroke="#e3c565" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M140 80 h80 l-40 56 Z" fill="#241a10"/>
+            <path d="M150 92 h60 l-30 42 Z" fill="#a8762e" stroke="none" opacity="0.8"/>
+            <path d="M180 136 v60 M156 200 h48"/>
+            <path d="M196 74 l22 -18 M218 56 a6 6 0 1 1 0.1 0" />
+            <g transform="translate(265 150)">
+              <rect x="-22" y="-50" width="44" height="100" rx="6" fill="#241a10"/>
+              <path d="M-22 -10 h44" stroke-opacity="0.6"/>
+              <rect x="-22" y="-10" width="44" height="60" rx="6" fill="#7c4a1e" stroke="none" opacity="0.8"/>
+              <circle cx="-6" cy="10" r="5" fill="#1c150e"/><circle cx="8" cy="28" r="5" fill="#1c150e"/>
+            </g>
+          </g>
+          <path d="M100 240 h200" stroke="#c9a227" stroke-opacity="0.4"/>
+          <g fill="#e3c565" opacity="0.5"><circle cx="85" cy="65" r="1.5"/><circle cx="325" cy="58" r="1.5"/></g>
+        </svg>
+        <figcaption>Craft Cocktails &amp; Bar</figcaption>
+      </figure>
+
+    </div>
+    <p class="gallery-note">Replace these illustrations with your own photos anytime — see the README.</p>
+  </div>
+</section>
+
+<!-- ======================= 到店与预订 VISIT ======================= -->
+<!-- 营业时间、地址、电话、预订链接全部来自 data/info.txt,今日营业时间会自动高亮 -->
+<section class="section section-dark" id="visit">
+  <div class="container">
+    <p class="section-kicker">Find Us</p>
+    <h2 class="section-title">Visit &amp; Reserve</h2>
+    <div class="section-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+    <div class="visit-grid">
+      <div class="visit-card">
+        <h3>Hours</h3>
+        <table class="hours-table" id="hoursTable"></table>
+      </div>
+      <div class="visit-card">
+        <h3>Location</h3>
+        <p class="visit-line" data-bind="address">—</p>
+        <a class="visit-link" id="mapLink" href="#" target="_blank" rel="noopener">Open in Maps →</a>
+        <h3 class="visit-sub">Contact</h3>
+        <p class="visit-line"><a class="visit-link" id="phoneLink" href="#" data-bind="phone">—</a></p>
+        <p class="visit-line"><a class="visit-link" id="emailLink" href="#" data-bind="email">—</a></p>
+      </div>
+      <div class="visit-card visit-card-accent">
+        <h3>Reservations</h3>
+        <p class="visit-line" data-bind="reservation_note">Call us or book online.</p>
+        <a class="btn btn-solid btn-block" id="reserveBtn" href="#" target="_blank" rel="noopener">Book a Table</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 页脚 FOOTER ======================= -->
+<!-- 社交链接来自 data/info.txt 的 social: 行;年份自动更新 -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-text" data-bind="name">Restaurant</span>
+      <p data-bind="tagline"></p>
+    </div>
+    <div class="footer-social" id="footerSocial"></div>
+    <p class="footer-copy">© <span id="year"></span> <span data-bind="name"></span>. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
