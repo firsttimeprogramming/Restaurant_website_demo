@@ -8,20 +8,20 @@
 # ============================================================
 
 # 餐厅名称(显示在导航栏、首屏标题、页脚)
-name: Maison Lumière
+name: Demo Restaurant
 # 标语/一句话介绍
-tagline: Modern European fine dining in the heart of the city
+tagline: Modern Demo Restaurant
 # 创立年份
-established: 2012
+established: 8888
 # 主厨姓名(显示在「关于我们」签名处)
-chef: Claire Beaumont
+chef: Demo chef
 
 # 电话(会自动生成可点击拨打的链接)
-phone: (415) 555-0123
+phone: (000) 000-0000
 # 邮箱
-email: reservations@maisonlumiere.com
+email: notvalid@notvalid.com
 # 地址
-address: 1847 Lafayette Street, San Francisco, CA 94109
+address: Demo street, San Francisco, CA 94109
 
 # Optional: custom Google Maps link. If removed, an address search link is used.
 # 可选:自定义谷歌地图链接;删除此行则自动用地址生成搜索链接。
@@ -31,15 +31,13 @@ map_link: https://www.google.com/maps/search/1847+Lafayette+Street+San+Francisco
 # 预订按钮:填订座网址(OpenTable、Resy 等);删除此行则按钮改为拨打电话。
 reservation_link: https://www.opentable.com
 # 预订区的提示文字
-reservation_note: Reservations recommended. Walk-ins welcome at the bar.
+reservation_note: Reservations recommended. Walk-ins welcome.
 
 # Shown under the menu.  显示在菜单下方的备注(如过敏提示)。
 menu_note: Menu changes seasonally. Please inform your server of any allergies or dietary restrictions.
 
 # About section — each "about:" line becomes one paragraph.
-# 「关于我们」— 每行 about: 是一个段落,可增删行数。
-about: Maison Lumière was born from a simple idea: that an evening at the table should feel like a celebration. Since 2012, we have welcomed guests into our candle-lit dining room for seasonal European cuisine built on the finest local ingredients.
-about: Executive Chef Claire Beaumont trained in Lyon and Copenhagen before returning home to open Maison Lumière. Her menus change with the markets — what you taste tonight may never appear quite the same way again.
+# 「关于我们」— 每行 about: 是一个段落,可增删行数
 about: Whether you join us for a quiet dinner for two or a celebration with friends, our team is devoted to one thing: making your evening extraordinary.
 
 # Hours — "Days | Times". One line each. "Closed" is fine too.
