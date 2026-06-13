@@ -27,3 +27,6 @@ By popular demand, we now welcome guests on Sunday evenings from 4 PM. Join us f
 ---
 [2026-05-18] Private Dining Room Available
 Our newly renovated private dining room seats up to 16 guests — perfect for anniversaries, business dinners, and family celebrations. Email us for availability and custom menus.
+---
+[2026-06-12] This is a test site
+This is a test site.
