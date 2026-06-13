@@ -113,6 +113,24 @@ then open `http://localhost:8000`. (On GitHub Pages this is automatic.)
 
 ---
 
+## 5. Custom domain (optional — switch anytime)
+
+By default the site is hosted on the free GitHub domain (`https://YOUR-USERNAME.github.io/repo-name/`) and **no setup is needed**. When you buy your own domain (e.g. `www.my-restaurant.com`), you can switch in ~5 minutes:
+
+1. **Rename `CNAME.example` to `CNAME`** (in the repository root) and replace its content with your domain on a single line, e.g. `www.my-restaurant.com`. The file must contain *only* the domain — no comments, no extra lines.
+2. **Add DNS records** at your domain registrar (GoDaddy, Namecheap, Cloudflare, etc.):
+   - For a `www` subdomain: add a **CNAME record** pointing `www` → `YOUR-USERNAME.github.io`
+   - For a bare/apex domain (`my-restaurant.com`): add four **A records** pointing to GitHub Pages IPs:
+     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+3. In the repository go to **Settings → Pages**, enter your domain under *Custom domain*, click **Save**, and once the DNS check passes tick **Enforce HTTPS** (free SSL certificate, automatic).
+4. Optional: in `index.html`, uncomment the `<link rel="canonical">` line (see the comment block near the top) and fill in your domain — good for search engines.
+
+**To switch back to github.io:** just delete the `CNAME` file and clear the domain in Settings → Pages. All asset paths in this template are relative, so the site works on both URLs with zero code changes.
+
+> DNS changes can take from a few minutes up to 24 hours to take effect.
+
+---
+
 ## Troubleshooting
 
 - **"Could not load the menu" on the live site** — check that the `data/` folder uploaded with the rest of the files.
@@ -213,6 +231,22 @@ python3 -m http.server 8000
 ```
 
 然后访问 `http://localhost:8000`。(部署到 GitHub Pages 后无需此步骤。)
+
+## 五、自定义域名(可选,随时可切换)
+
+默认情况下网站托管在 GitHub 免费域名上(`https://你的用户名.github.io/仓库名/`),**无需任何设置**。当你购买了自己的域名(如 `www.my-restaurant.com`),约 5 分钟即可切换:
+
+1. **把仓库根目录的 `CNAME.example` 重命名为 `CNAME`**,并把文件内容替换为你的域名(单独一行),例如 `www.my-restaurant.com`。注意:此文件*只能*包含域名本身——不能有注释或多余行。
+2. **在域名服务商处添加 DNS 记录**(阿里云、腾讯云、GoDaddy、Cloudflare 等):
+   - 使用 `www` 子域名:添加一条 **CNAME 记录**,将 `www` 指向 `你的用户名.github.io`
+   - 使用裸域名(`my-restaurant.com`):添加四条 **A 记录**,指向 GitHub Pages 的 IP:
+     `185.199.108.153`、`185.199.109.153`、`185.199.110.153`、`185.199.111.153`
+3. 进入仓库 **Settings → Pages**,在 *Custom domain* 填入域名并点 **Save**;DNS 检查通过后勾选 **Enforce HTTPS**(免费 SSL 证书,自动签发)。
+4. 可选:在 `index.html` 顶部的注释块中,取消 `<link rel="canonical">` 那一行的注释并填入你的域名,有利于搜索引擎收录。
+
+**想换回 github.io:** 删除 `CNAME` 文件,并在 Settings → Pages 清空域名即可。本模板所有资源都使用相对路径,两种域名方式均可直接工作,无需改任何代码。
+
+> DNS 记录生效时间从几分钟到 24 小时不等。
 
 ## 常见问题
 
